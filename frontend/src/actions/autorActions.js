@@ -1,10 +1,14 @@
+import axios from "axios";
 import api from "../api/api";
 
-export const getAutores = () => async (dispatch) =>{
+const API_URL = api
+
+export const getAutores = () => async () =>{
     try {
-        const response = await api.get('/autores/');
-        dispatch({ type: 'FETCH_AUTORES_SUCCESS', payload:response.data});
+        const response = await axios.get(`${API_URL}/autores/`);
+        return response.data;
     } catch (error) {
         console.error(error)
+        throw error;
     }
 }

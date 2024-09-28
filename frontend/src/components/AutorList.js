@@ -1,21 +1,33 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux'
-import { getAutores } from '../actions/autorActions';
+// AutorList.js
+import React, { useEffect, useState } from 'react';
+import { getAutores } from '../actions/autorActions'
 
 const AutorList = () => {
-    const dispatch = useDispatch();
-    const autores = useSelector((state) => state.autores);
+    const [autores, setAutores] = useState([]);
 
-    useEffect(() = {
-        dispatch(getAutores());
-    }, [dispatch]);
+    useEffect(() => {
+        const fetchAutores = async () => {
+            try {
+                const data = await getAutores();
+                setAutores(data);
+            } catch (error) {
+                console.error(error)
+            }
+        }
+        fetchAutores()
+    }, []);
 
     return (
         <div>
-            <h1>Lista de Libros</h1>
-            
+            <h1>Autor</h1>
+            <ul>
+                {autores.map(autor => (
+                    <li key={autor.id}>
+                    </li>
+                ))}
+            </ul>
         </div>
     );
-}
+};
 
 export default AutorList;

@@ -1,31 +1,26 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+// LibroList.js
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { getLibros } from '../actions/libroActions';
 
-const BooksList = () => {
-  const [books, setBooks] = useState([]);
+const LibroList = () => {
+  const dispatch = useDispatch();
+  const libros = useSelector((state) => state.libros);
 
   useEffect(() => {
-    axios.get('http://127.0.0.1:8000/libros/')
-      .then(response => {
-        setBooks(response.data);
-      })
-      .catch(error => {
-        console.error('There was an error fetching the books!', error);
-      });
-  }, []);
+    dispatch(getLibros());
+  }, [dispatch]);
 
   return (
     <div>
-      <h1>Lista de Libros</h1>
+      <h2>Libros</h2>
       <ul>
-        {books.map(book => (
-          <li key={book.id}>
-            {book.titulo} - {book.autor.nombre} (${book.precio})
-          </li>
+        {libros.map((libro) => (
+          <li key={libro.id}>{libro.titulo}</li>
         ))}
       </ul>
     </div>
   );
-}
+};
 
-export default BooksList;
+export default LibroList;
