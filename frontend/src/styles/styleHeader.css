@@ -1,0 +1,58 @@
+.header {
+    background-color: #002552;
+    padding: 10px 0;
+}
+
+.top-bar {
+    background-color: #3366CC;
+    text-align: right;
+    padding: 5px 20px;
+    color: white;
+    font-size: 14px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-tech {
+    height: 90px;
+    margin-right: 10px;
+}
+
+.logo-tic {
+    height: 50px;
+    margin-right: 10px;
+}
+.logo-gov {
+    height: 20px;
+    margin-right: 10px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-right: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #00AEEF;
+}
