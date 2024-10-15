@@ -17,6 +17,7 @@ th {
   color: white;
 }
 
-td:hover {
-  background-color: #ddd;
+tr:hover {
+  background-color: #ff3737;
 }
+
