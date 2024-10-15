@@ -1,3 +1,4 @@
+/* Mejora el diseño de la tabla */
 table {
   border-collapse: collapse;
   width: 100%;
@@ -5,19 +6,18 @@ table {
 
 th, td {
   text-align: left;
-  padding: 8px;
+  padding: 12px; /* Increase padding for better spacing */
 }
 
 tr:nth-child(even) {
-  background-color: #f2f2f2;
+  background-color: #f5f5f5; /* Lighten the background color */
 }
 
 th {
-  background-color: #4CAF50;
-  color: white;
+  background-color: #2196F3; /* Change header background color */
+  color: #fff; /* Change text color to white */
 }
 
 tr:hover {
-  background-color: #ff3737;
+  background-color: #ff7f7f; /* Change hover background color */
 }
-
